@@ -115,16 +115,6 @@ public class EntityChair extends Entity {
     }
 
     @Override
-    public double getPassengersRidingOffset() {
-        return 0.0;
-    }
-
-    @Override
-    public double getMyRidingOffset() {
-        return 0.0;
-    }
-
-    @Override
     public InteractionResult interact(Player player, InteractionHand interactionHand) {
         if (player.isSecondaryUseActive()) {
             return InteractionResult.PASS;

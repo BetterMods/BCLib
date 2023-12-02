@@ -67,7 +67,7 @@ public abstract class AbstractBaseRecipeBuilder<T extends AbstractBaseRecipeBuil
     protected T unlockedBy(ItemLike item) {
         this.unlocks(
                 "has_" + item.asItem().getDescriptionId(),
-                RecipeProvider.has(item.asItem())
+                RecipeProvider.has(item.asItem()).triggerInstance()
         );
 
         return (T) this;
@@ -76,7 +76,7 @@ public abstract class AbstractBaseRecipeBuilder<T extends AbstractBaseRecipeBuil
     protected T unlockedBy(TagKey<Item> tag) {
         this.unlocks(
                 "has_tag_" + tag.location().getNamespace() + "_" + tag.location().getPath(),
-                RecipeProvider.has(tag)
+                RecipeProvider.has(tag).triggerInstance()
         );
 
         return (T) this;
@@ -112,7 +112,7 @@ public abstract class AbstractBaseRecipeBuilder<T extends AbstractBaseRecipeBuil
      * @param items {@link Item}s or {@link Block}s that will unlock the recipe.
      */
     protected T unlocks(String name, ItemLike... items) {
-        return unlocks(name, InventoryChangeTrigger.TriggerInstance.hasItems(items));
+        return unlocks(name, InventoryChangeTrigger.TriggerInstance.hasItems(items).triggerInstance());
     }
 
     /**

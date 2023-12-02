@@ -134,8 +134,7 @@ public abstract class BaseDoublePlantBlock extends BaseBlockNotFull implements R
     public boolean isValidBonemealTarget(
             LevelReader levelReader,
             BlockPos blockPos,
-            BlockState blockState,
-            boolean isClient
+            BlockState blockState
     ) {
         return true;
     }

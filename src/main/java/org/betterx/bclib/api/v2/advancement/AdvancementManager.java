@@ -397,7 +397,7 @@ public class AdvancementManager {
             return this;
         }
 
-        public Builder requirements(RequirementsStrategy requirementsStrategy) {
+        public Builder requirements(AdvancementRequirements.Strategy requirementsStrategy) {
             builder.requirements(requirementsStrategy);
             return this;
         }
